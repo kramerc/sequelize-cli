@@ -39,13 +39,19 @@ function combinations (array) {
 }
 
 var coffeeVersions = ['0.3.5', '2.0.0'];
+var lebabVersions = ['1.2.0'];
 var dialects = ['mysql', 'sqlite'];
 var sequelizeVersions = ['1.7.11', '2.1.3', '3.22.0'];
 
 console.log('env:');
-combinations([coffeeVersions, dialects, sequelizeVersions]).forEach(function (combination) {
+combinations([
+  coffeeVersions,
+  lebabVersions,
+  dialects,
+  sequelizeVersions
+]).forEach(function (combination) {
   console.log(
-    '  - JS2COFFEE=' + combination[0] + ' DIALECT=' +
-    combination[1] + ' SEQUELIZE=' + combination[2]
+    '  - JS2COFFEE=' + combination[0] + ' LEBAB=' + combination[1] +
+    ' DIALECT=' + combination[2] + ' SEQUELIZE=' + combination[3]
   );
 });

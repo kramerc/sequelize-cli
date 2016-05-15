@@ -99,6 +99,21 @@ This will configure the CLI to always treat `config/database.json` as config fil
 The CLI is compatible with CoffeeScript. You can tell the CLI to enable that support via the `--coffee`
 flag. Please note that you'll need to install `js2coffee` and `coffee-script` for full support.
 
+### ES6 support
+
+The CLI is compatible with ES6. You can tell the CLI to enable that support via the `--es6`
+flag. For full support you will need to install `lebab`, `babel-cli` (or `babel-register`), and `babel-preset-es2015`.
+
+You will also need to define the `es2015` preset in your `.babelrc` file:
+
+```json
+{
+  "presets": ["es2015"]
+}
+```
+
+**Note**: This currently does not work with Node 0.10. See [mohebifar/lebab#121](https://github.com/mohebifar/lebab/pull/121).
+
 ### Configuration file
 
 By default the CLI will try to use the file `config/config.js` and `config/config.json`. You can modify that path either via the `--config` flag or via the option mentioned earlier. Here is how a configuration file might look like (this is the one that `sequelize init` generates):
